@@ -1,0 +1,4 @@
+pymongo[srv]==4.1.1
+pprint36
+fastapi
+uvicorn
