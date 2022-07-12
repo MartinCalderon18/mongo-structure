@@ -7,7 +7,8 @@ user = APIRouter()
 
 @user.get('/users')
 def find_all_users():
-    return usersEntity(db.user.find())
+    db.user.users.find()
+    return usersEntity(db.user.users.find())
 
 @user.get('/users/{id}')
 def find_user():

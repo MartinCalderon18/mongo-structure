@@ -9,4 +9,11 @@ def userEntity(item) -> dict:
 
 # This function will take a list of users and then pass each one to userEntity to generate the schema
 def usersEntity(entity) -> list:
-    [userEntity() for item in usersEntity]
+    return [userEntity(item) for item in entity]
+
+def serializeDict(a) -> dict:
+    return {**{i: str(a[i]) for i in a if i == '_id'}, **{i: a[i] for i in a if i != '_id'}}
+
+
+def serializeList(entity) -> list:
+    return [serializeDict(a) for a in entity]
